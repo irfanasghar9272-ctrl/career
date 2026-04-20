@@ -233,6 +233,35 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
 }
 
+.categories-bg {
+    background-image: url('cards-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    position: relative;
+    box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.4);
+    margin: 2rem auto;
+}
+
+.categories-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    z-index: 0;
+}
+
+.categories-bg > * {
+    position: relative;
+    z-index: 1;
+}
+
 /* Hero Section */
 .hero {
     display: flex;

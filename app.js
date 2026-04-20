@@ -118,7 +118,7 @@ const views = {
             </div>
         </section>
 
-        <section class="section">
+        <section class="section categories-bg">
             <div class="text-center">
                 <h2 class="section-title">Popular Career Pathways</h2>
                 <p class="section-subtitle">Discover structured roadmaps for the most in-demand careers in Pakistan.</p>
@@ -202,7 +202,7 @@ const views = {
                         </div>
                         <div style="display: flex; align-items: center; gap: 1rem;">
                             <div class="card-icon" style="width: 50px; height: 50px; margin:0;"><i class="fa-solid fa-phone"></i></div>
-                            <div><strong>Call/WhatsApp</strong><br><span style="color: var(--gray);">01234567891</span></div>
+                            <div><strong>Call/WhatsApp</strong><br><span style="color: var(--gray);">03456789100</span></div>
                         </div>
                     </div>
                 </div>
@@ -244,7 +244,7 @@ const views = {
     `,
 
     paths: () => `
-        <section class="section" style="padding-top: 2rem;">
+        <section class="section categories-bg" style="padding-top: 4rem; padding-bottom: 4rem;">
             <div class="text-center">
                 <h1 class="section-title">All Career Paths</h1>
                 <p class="section-subtitle">Select a discipline to view exact entry requirements, crucial tests, detailed timelines, and authentic salary potentials.</p>

@@ -114,7 +114,7 @@ const views = {
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Students Planning Career">
+                <img src="hero-image.png" alt="Students Planning Career">
             </div>
         </section>
 

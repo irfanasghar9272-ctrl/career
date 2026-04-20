@@ -1,19 +1,19 @@
 :root {
     /* Color Palette */
-    --primary: #065F46;
-    --primary-light: #10B981;
-    --primary-dark: #064E3B;
+    --primary: #0284C7;
+    --primary-light: #38BDF8;
+    --primary-dark: #0369A1;
     --secondary: #F59E0B;
     --dark: #0F172A;
     --dark-light: #1E293B;
     --gray: #64748B;
     --gray-light: #F1F5F9;
     --white: #FFFFFF;
-    --accent: #10B981;
+    --accent: #38BDF8;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #065F46 0%, #059669 100%);
-    --gradient-glow: linear-gradient(135deg, rgba(6, 95, 70, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+    --gradient-primary: linear-gradient(135deg, #0284C7 0%, #0EA5E9 100%);
+    --gradient-glow: linear-gradient(135deg, rgba(2, 132, 199, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
     
     /* Typography */
     --font-heading: 'Outfit', sans-serif;
@@ -190,7 +190,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    box-shadow: 0 4px 15px rgba(6, 95, 70, 0.3);
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3);
     transition: var(--transition);
     display: inline-flex;
     align-items: center;
@@ -206,7 +206,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary:hover, .btn-primary-sm:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(6, 95, 70, 0.4);
+    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.4);
 }
 
 .btn-outline {
@@ -598,7 +598,7 @@ h1, h2, h3, h4, h5, h6 {
 .form-control:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(6, 95, 70, 0.1);
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
 }
 
 /* Reviews */

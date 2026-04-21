@@ -102,12 +102,22 @@ const expertsData = [
 // --- Views ---
 
 const views = {
-    home: () => `
+    home: () => {
+        let heroData = null;
+        try {
+            const saved = localStorage.getItem('career_hero_data');
+            if(saved) heroData = JSON.parse(saved);
+        } catch(e) {}
+        
+        const heroTitle = heroData ? heroData.title : 'Shape Your Future With <span class="highlight">Clarity</span>';
+        const heroDesc = heroData ? heroData.desc : 'Expert, step-by-step career guidance for Pakistani students. Whether it\'s joining the prestigious Pak Army, pursuing MBBS, or diving into IT, we help you navigate the journey.';
+
+        return `
         <section class="hero" id="home">
             <div class="hero-content">
                 <div class="hero-tag">Free Counseling Registration Open</div>
-                <h1 class="hero-title">Shape Your Future With <span class="highlight">Clarity</span></h1>
-                <p class="hero-desc">Expert, step-by-step career guidance for Pakistani students. Whether it's joining the prestigious Pak Army, pursuing MBBS, or diving into IT, we help you navigate the journey.</p>
+                <h1 class="hero-title">${heroTitle}</h1>
+                <p class="hero-desc">${heroDesc}</p>
                 <div class="hero-actions">
                     <a href="#quiz" class="btn-primary">Find My Career</a>
                     <a href="#paths" class="btn-outline">Explore Pathways</a>
@@ -161,29 +171,57 @@ const views = {
             </div>
         </section>
 
-        <section class="section">
-            <div class="text-center">
-                <h2 class="section-title">Success Stories</h2>
-                <p class="section-subtitle">Hear from students who successfully found their calling.</p>
+        <section class="section" id="feedback">
+            <div class="text-center" style="margin-bottom: 2rem;">
+                <div class="hero-tag" style="background: rgba(2, 132, 199, 0.1); color: var(--primary); margin-bottom: 1rem;">Testimonials</div>
+                <h2 class="section-title">Patient & Client <span class="highlight">Feedback</span></h2>
+                <p class="section-subtitle">Read what our patients and clients have to say about their life-changing experiences and the premium holistic care they received.</p>
             </div>
             <div class="reviews-grid">
+                <!-- Review 1 -->
                 <div class="review-card">
                     <i class="fa-solid fa-quote-right review-quote"></i>
-                    <p>"The step-by-step ISSB guidance from Major Tariq was incredible. I knew exactly what to prepare for, and I recently got my recommendation! Thank you!"</p>
+                    <div class="star-rating">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"The medical and psychological counseling I received here was absolutely life-changing. From the moment I walked in as a patient, I felt deeply understood and thoroughly cared for. An exceptional experience!"</p>
                     <div class="review-author">
-                        <div class="review-avatar">A</div>
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Patient Avatar" class="review-avatar">
                         <div>
-                            <strong>Ali Raza</strong><br><small>Recommended for PMA</small>
+                            <div class="review-name">Zoya Rahman</div>
+                            <div class="review-role">Recovering Patient</div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Review 2 -->
                 <div class="review-card">
                     <i class="fa-solid fa-quote-right review-quote"></i>
-                    <p>"I was confused between IT and Engineering. The counseling sessions helped me realize my passion for coding, and now I'm at FAST NU."</p>
+                    <div class="star-rating">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"I was struggling with immense stress regarding my career and health. The experts here provided me with a highly personalized roadmap. Their empathy and expert medical insights are simply phenomenal."</p>
                     <div class="review-author">
-                        <div class="review-avatar">S</div>
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Patient Avatar" class="review-avatar">
                         <div>
-                            <strong>Sara Khan</strong><br><small>BSCS Student</small>
+                            <div class="review-name">Asad Mahmood</div>
+                            <div class="review-role">Counseling Client</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <i class="fa-solid fa-quote-right review-quote"></i>
+                    <div class="star-rating">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="review-text">"A truly holistic approach to wellness. The doctors and counselors took the time to understand my medical history before offering specialized advice. Highly recommended to anyone seeking clarity!"</p>
+                    <div class="review-author">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Patient Avatar" class="review-avatar">
+                        <div>
+                            <div class="review-name">Dr. Sara K.</div>
+                            <div class="review-role">Medical Patient</div>
                         </div>
                     </div>
                 </div>
@@ -241,7 +279,8 @@ const views = {
                 </div>
             </div>
         </section>
-    `,
+    `;
+    },
 
     paths: () => `
         <section class="section categories-bg" style="padding-top: 4rem; padding-bottom: 4rem;">
